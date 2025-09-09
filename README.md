@@ -42,7 +42,10 @@
   - [4.1 Model Downloads](#41-model-downloads)
   - [4.2 OpenRouter API](#42-openrouter-api)
   - [4.3 OpenRouter Web Chat](#43-openrouter-web-chat)
+- [Privacy & Security](#privacy--security)
+- [Acknowledgments](#acknowledgments)
 - [License](#license)
+- [Citation](#citation)
 - [Contact](#contact)
 
 
@@ -61,18 +64,18 @@ Among these, **Dmind-2-107B** demonstrates exceptional depth of understanding an
 - **Features**: Its core advantage lies in its ability to deeply integrate macro market trends with micro on-chain activities, possessing a panoramic multi-chain data analysis capability; it can autonomously orchestrate and execute complex on-chain tasks spanning multiple protocols and dozens of steps; enhanced with advanced tool-calling capabilities for seamless integration with protocols, APIs, and trading interfaces; and it can synthesize traditional indicators with crypto-native signals such as on-chain data and social sentiment, providing investors with unprecedented deep insights and intelligent decision-making support.
 
 
-**Technical Innovations:**
-### 1. Domain-Adaptive Supervised Fine-Tuning (SFT)
+### Technical Innovations:
+#### 1. Domain-Adaptive Supervised Fine-Tuning (SFT)
 
 In building DMind-2, we deeply understand the uniqueness of the crypto investment domain—it requires not only profound blockchain technical understanding but also keen financial market insights, and most importantly, the ability to perform rigorous logical reasoning among complex on-chain data and market signals. Therefore, our domain-adaptive fine-tuning strategy fully considers these requirements from the very beginning of dataset construction. We carefully curated a total of 47.6K high-quality training samples, including 27.8K crypto domain-specific data points covering comprehensive crypto investment scenarios from DeFi protocol analysis and NFT valuation models to DAO governance decisions. These data points are not simple Q&A pairs but contain complete investment logic chains, encompassing the entire reasoning process from market observation, data analysis, and risk assessment to investment recommendations.
 
 To ensure the model maintains fundamental financial analysis capabilities while focusing on the crypto domain, we specifically incorporated 11.2K high-quality general domain data points and 8.6K pan-financial domain data points. These datasets help the model establish a solid foundation in financial theory and market analysis frameworks, enabling it to creatively apply mature methodologies from traditional finance to the emerging crypto sector. Through this multi-layered data fusion strategy, DMind-2 can act like a professional investment advisor who understands both technology and finance, providing users with comprehensive and in-depth investment analysis.
 
-### 2. 🔥 Core Innovation: Distribution-Preserving Chain-of-Thought Distillation (DPCD)
+#### 2. 🔥 Core Innovation: Distribution-Preserving Chain-of-Thought Distillation (DPCD)
 
 DMind-2's greatest technical breakthrough lies in our innovative Distribution-Preserving Chain-of-Thought Distillation method. Traditional domain fine-tuning causes catastrophic forgetting in CoT models, where the model loses reasoning coherence while gaining domain knowledge. Our DPCD method solves this through a mathematically rigorous dual-stream architecture.
 
-#### Core Formulation
+##### Core Formulation
 
 The DPCD optimization objective combines domain adaptation with reasoning preservation through the following loss function:
 
@@ -90,7 +93,7 @@ Where:
 
 
 
-#### Dynamic Weight Adjustment Mechanism
+##### Dynamic Weight Adjustment Mechanism
 
 The complexity-aware weight adjustment is formulated as:
 
@@ -108,7 +111,7 @@ This mathematical framework ensures that DMind-2 maintains Qwen3's powerful reas
 
 Through extensive experimentation, we found optimal hyperparameters: \\(\lambda_{\text{base}} = 0.3\\), \\(\lambda_{\text{high}} = 0.7\\), \\(\beta = 0.2\\), and \\(\delta = 0.1\\). This configuration achieves a 94.1% reasoning chain completeness while improving domain-specific accuracy by 23.2% over baseline fine-tuning methods.
 
-### 3. Reinforcement Learning from Human Feedback (RLHF) Optimization
+#### 3. Reinforcement Learning from Human Feedback (RLHF) Optimization
 
 After completing basic domain fine-tuning, we further optimize the model using the Group Relative Policy Optimization (GRPO) algorithm. GRPO offers better stability compared to traditional PPO algorithms, which is particularly important for financial domain models—we cannot tolerate dramatic performance fluctuations during optimization as this could lead to unpredictable investment advice. During the RLHF phase, we focused on addressing two key issues: professional output formatting and safety compliance.
 
@@ -169,6 +172,17 @@ Edge-deployed DMind-2 can monitor market dynamics 24/7, promptly alerting users 
 *Web chat interface documentation will be available soon.*
 
 
+## Privacy & Security
+- 🔐 **Fully Localized**: All inference computations are completed on user devices, no internet required
+- 🛡️ **Data Privacy**: Investment strategies and personal information never leave local devices
+- ⚡ **Real-Time Response**: No network latency, millisecond-level response speed
+- 🔒 **Security Compliance**: Built-in risk warning mechanisms, compliant with financial regulations
+
+## Acknowledgments
+
+We thank the Qwen and zai teams for providing the excellent base model and the continuous contributions from the open-source community. DMind-2's success wouldn't be possible without the collective efforts of the entire AI and Crypto community.
+
+
 ## License
 - The code repository and model weights for DMind-2-107B is released under the MIT License.
 - Commercial use, modification, and derivative works (including distillation and fine-tuning) are permitted.
@@ -176,5 +190,22 @@ Edge-deployed DMind-2 can monitor market dynamics 24/7, promptly alerting users 
   - DMind-2-107B is derived from GLM-4.5-Air, originally licensed under the [Zai License](https://github.com/zai-org/GLM-4.5).
 - Please ensure compliance with the original base model licenses when using or distributing derivatives.
 
+
+## Citation
+
+```bibtex
+@misc{dmind2025,
+  title={DMind-2: Advanced Crypto Domain-Specific Large Language Models with Distribution-Preserving CoT Distillation},
+  author={DMind Team},
+  year={2025},
+  publisher={Hugging Face}
+}
+```
+
+
 ## Contact
 For questions or support, please contact team@dmind.ai
+
+- 🌐 Project Homepage: [https://dmind.ai](https://dmind.ai)
+- 💬 Community Discussion: [Discord](https://discord.gg/dmind)
+- 🐦 Twitter: [@DMindAI](https://twitter.com/DMindAI)
