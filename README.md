@@ -85,11 +85,11 @@ $$
 
 Where:
 
-* \\(\theta_s\\) and \\(\theta_t\\) represent student (trainable) and teacher (frozen) model parameters.
-* \\(P_{\theta}^{(i)}\\) denotes the probability distribution at reasoning step \\(i\\).
-* \\(\lambda(t) = \lambda_0 \cdot (1 + \gamma \cdot \text{complexity}(x_t))\\) is the dynamic weight function.
-* \\(\alpha_i = \exp(-\delta \cdot i/T)\\) implements exponential decay for later reasoning steps.
-* \\(\mathcal{L}_{\text{QS}}\\) is the quality scoring loss ensuring reasoning coherence.
+* $\theta_s$ and $\theta_t$ represent student (trainable) and teacher (frozen) model parameters.
+* $P_{\theta}^{(i)}$ denotes the probability distribution at reasoning step $i$.
+* $\lambda(t) = \lambda_0 \cdot (1 + \gamma \cdot \text{complexity}(x_t))$ is the dynamic weight function.
+* $\alpha_i = \exp(-\delta \cdot i/T)$ implements exponential decay for later reasoning steps.
+* $\mathcal{L}_{\text{QS}}$ is the quality scoring loss ensuring reasoning coherence.
 
 
 
@@ -105,11 +105,11 @@ $$
 \end{cases}
 $$
 
-Where \\(\mathcal{H}(x_t)\\) measures reasoning complexity through chain length and branching factor, \\(\mathcal{S}(c_t)\\) counts domain-specific terms, and \\(|\mathcal{V}_{\text{crypto}}|\\) is the crypto vocabulary size.
+Where $\mathcal{H}(x_t)$ measures reasoning complexity through chain length and branching factor, $\mathcal{S}(c_t)$ counts domain-specific terms, and $|\mathcal{V}_{\text{crypto}}|$ is the crypto vocabulary size.
 
-This mathematical framework ensures that DMind-2 maintains Qwen3's powerful reasoning capabilities while acquiring deep crypto domain expertise. The KL divergence constraint operates at each token generation step, preserving the original model's reasoning patterns. The quality scoring mechanism \\(\mathcal{L}_{\text{QS}}\\) filters out low-quality reasoning chains, maintaining only those paths with coherence scores above threshold \\(\tau = 0.85\\).
+This mathematical framework ensures that DMind-2 maintains Qwen3's powerful reasoning capabilities while acquiring deep crypto domain expertise. The KL divergence constraint operates at each token generation step, preserving the original model's reasoning patterns. The quality scoring mechanism $\mathcal{L}_{\text{QS}}$ filters out low-quality reasoning chains, maintaining only those paths with coherence scores above threshold $\tau = 0.85$.
 
-Through extensive experimentation, we found optimal hyperparameters: \\(\lambda_{\text{base}} = 0.3\\), \\(\lambda_{\text{high}} = 0.7\\), \\(\beta = 0.2\\), and \\(\delta = 0.1\\). This configuration achieves a 94.1% reasoning chain completeness while improving domain-specific accuracy by 23.2% over baseline fine-tuning methods.
+Through extensive experimentation, we found optimal hyperparameters: $\lambda_{\text{base}} = 0.3$, $\lambda_{\text{high}} = 0.7$, $\beta = 0.2$, and $\delta = 0.1$. This configuration achieves a 94.1% reasoning chain completeness while improving domain-specific accuracy by 23.2% over baseline fine-tuning methods.
 
 #### 3. Reinforcement Learning from Human Feedback (RLHF) Optimization
 
