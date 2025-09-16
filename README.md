@@ -122,7 +122,7 @@ Safety alignment is another aspect we particularly emphasize. The crypto investm
 ## 2. Performance Metrics
 
 <div align="center">
-  <img src="figures/dmind-2-performance.jpeg" width="80%" alt="DMind-2" />
+  <img src="figures/dmind-2-performance.jpeg" width="85%" alt="DMind-2" />
 </div>
 
 
