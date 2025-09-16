@@ -197,17 +197,6 @@ We thank the Qwen and zai teams for providing the excellent base model and the c
 - Please ensure compliance with the original base model licenses when using or distributing derivatives.
 
 
-## Citation
-
-```bibtex
-@misc{dmind2025,
-  title={DMind-2: Advanced Crypto Domain-Specific Large Language Models with Distribution-Preserving CoT Distillation},
-  author={DMind Team},
-  year={2025},
-  publisher={Hugging Face}
-}
-```
-
 
 ## Contact
 For questions or support, please contact team@dmind.ai
