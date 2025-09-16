@@ -45,7 +45,6 @@
 - [Privacy & Security](#privacy--security)
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
-- [Citation](#citation)
 - [Contact](#contact)
 
 
